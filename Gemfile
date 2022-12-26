@@ -30,9 +30,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'annotate'
 gem 'devise'
+gem 'faker'
 gem 'hamlit'
 gem 'rubocop-rails'
-gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
