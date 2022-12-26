@@ -2,7 +2,7 @@
   %h2 Login
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .field
-      = f.label :Eメール
+      = f.label :email
       %br/
       = f.email_field :email, autofocus: true, autocomplete: "email", class: 'text'
     .field
