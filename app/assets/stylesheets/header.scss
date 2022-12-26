@@ -1,0 +1,34 @@
+$avatar-size: 40px;
+$back-icon-size: 16px;
+
+.header {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+
+
+a {
+        color: black;
+        text-align: center;
+        text-decoration: none;
+  } 
+
+    &_loginBtn {
+        background-color: #F8BD1C;
+        height: $avatar-size;
+        border-radius: 8px;
+        font-size: 12px;
+        padding: 8px 16px;
+        color: black;
+        width: 100px;
+      }
+
+
+
+}
+p.header_line {
+    margin-top: 16px;
+    border-bottom: 1px solid black;
+    opacity: 0.1;
+    width: 100%;
+}
