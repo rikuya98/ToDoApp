@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'annotate'
 gem 'devise'
+gem 'faker'
 gem 'hamlit'
 gem 'rubocop-rails'
 
