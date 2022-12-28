@@ -1,2 +1,17 @@
-%h1
-  = @board.name
+.container
+  - @boards.each do |board|
+    %h2 All Boards
+    .board
+      .board_name
+        = board.name
+        .dropdown
+          = image_tag 'board_btn.png'
+          .dropdown-content
+            = link_to 'edit'
+            = link_to 'delete'
+      .board_description
+        = board.description
+      .board_icon
+        = image_tag 'Oval.png'
+  .new_board
+    %h2 + Add new borad
