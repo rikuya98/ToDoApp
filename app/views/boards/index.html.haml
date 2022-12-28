@@ -1,2 +1,12 @@
-%h1
-  = @board.name
+.container
+  - @boards.each do |board|
+    %h2 All Boards
+    .board
+      .board_name
+        = board.name
+        .board_btn
+        = image_tag 'board_btn.png'
+      .board_description
+        = board.description
+      .board_icon
+        = image_tag 'Oval.png'

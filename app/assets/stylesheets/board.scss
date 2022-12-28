@@ -1,0 +1,37 @@
+$board-title-font-size: 18px;
+$board-text-font-size:14px ;
+
+.board {background-color: #F4F4F4;
+    border-radius: 10px;
+    margin: 16px;
+    padding:17px 17px;
+
+
+
+  &_name {
+    display: flex;
+    justify-content: space-between;
+    font-size: $board-title-font-size ;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+    img {
+    width: 24px;
+    height: 6px;
+  }
+
+  &_description {
+    font-size: $board-text-font-size;
+    margin-bottom: 30px;
+  }
+
+  &_icon {
+    cursor: pointer;
+
+  img {
+    width: 30px;
+    height: 30px;
+    }
+  }
+}
