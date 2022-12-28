@@ -5,7 +5,9 @@ $board-text-font-size:14px ;
     border-radius: 10px;
     margin: 16px;
     padding:17px 17px;
-
+  a {
+    text-decoration: none;
+  }
 
 
   &_name {
