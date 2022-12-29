@@ -2,7 +2,7 @@
   %ul
     - @board.errors.full_messages.each do |message|
       %li= message
-  = form_with(model: @board, url:board_path, method: 'post', local: true) do |f|
+  = form_with(model: @board, url:board_path(@board), method: 'put', local: true) do |f|
     %div 
       = f.label :name, 'タイトル'
     %div 
@@ -13,3 +13,4 @@
       = f.text_area :description, class: 'text_content'
     %div 
       = f.submit '保存', class: 'btn_submit'
+
