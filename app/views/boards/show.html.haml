@@ -1,0 +1,12 @@
+.board
+  .board_name
+    = @board.name
+    .dropdown
+      = image_tag 'board_btn.png'
+      .dropdown-content
+        = link_to 'edit', edit_board_path(@board)
+        = link_to 'delete'
+  .board_description
+    = @board.description
+  .board_icon
+    = image_tag 'Oval.png'
