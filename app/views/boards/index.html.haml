@@ -8,8 +8,8 @@
           .dropdown
             = image_tag 'board_btn.png'
             .dropdown-content
-              = link_to 'edit' , edit_board_path(@board)
-              = link_to 'delete', board_path(@board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+              = link_to 'edit' , edit_board_path(id: board.id)
+              = link_to 'delete', board_path(id: board.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
         .board_description
           = board.description
         .board_icon
