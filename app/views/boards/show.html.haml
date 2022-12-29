@@ -11,6 +11,11 @@
       = @board.description
     .board_icon
       = image_tag 'Oval.png'
+  .board
+    %h2 TaskList
+    -  @tasks.each do |task|
+      .board_task
+        %p = task.name
   = link_to new_board_task_path(@board) do
     .new_board
       %h2 + Add new task
