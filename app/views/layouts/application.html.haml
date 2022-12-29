@@ -10,7 +10,8 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
   %body
     %header.header
-      %p Boards
+      = link_to :back do
+        %h2 Boards
       %p.header_line
       - if user_signed_in?
         .dropdown
