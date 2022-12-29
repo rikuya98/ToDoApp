@@ -3,12 +3,19 @@
 @import 'header';
 @import 'common';
 @import 'board';
+@import 'flash';
+
+
 .container {
     width: 100%;
     padding: 16px;
     background: #FFFFFF;
 }
-
+ 
+a {
+    text-decoration: none;
+    color: #000000;
+}
 body {
     height: 100%;
     line-height: 25px;
