@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
     get '/'=> 'boards#index'
     resources :boards do
-    resources :tasks, only: [:new, :create]
+    resources :tasks
 end
 end

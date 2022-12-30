@@ -1,0 +1,14 @@
+.container
+  - @tasks.each do |task|
+    .board
+      .board_name
+        = task.name
+        .dropdown
+          = image_tag 'board_btn.png'
+          .dropdown-content
+            = link_to 'edit',edit_board_task_path(id: task.id)
+            = link_to 'delete'
+      .board_description
+        = task.description
+        .board_icon
+          = image_tag 'Oval.png'

@@ -1,11 +1,16 @@
 .container
   %h2= @board.name
   - @tasks.each do |task|
-    .board 
-      .board_name 
-        = task.name
-      .board_description
-        = task.description
+    = link_to board_task_path(@tasks) do
+      .board 
+        .board_name 
+          = task.name
+        .board_description
+          = task.description
+        .board_icon
+          = image_tag 'Oval.png'
+          .board_icon_comments
+            = image_tag 'comments.png'
   = link_to new_board_task_path(@board) do
     .new_board
       %h2 + Add new task
