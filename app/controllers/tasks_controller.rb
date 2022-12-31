@@ -1,5 +1,13 @@
 class TasksController < ApplicationController
 
+    def show
+        # @board = Board.find(params[:id])
+        # @tasks = @board.tasks
+        # @board = Board.find(params[:id])
+        # @tasks = Task.find(params[:id])
+        @tasks = Task.find(params[:id])
+    end
+
     def new
         board = Board.find(params[:board_id])
         @task = board.tasks.build
@@ -18,6 +26,20 @@ class TasksController < ApplicationController
             render :new
         end
     end
+
+    def edit
+      @task = current_user.tasks.find(params[:id])
+    end
+
+    def update
+        @task = current_user.tasks.find(params[:id])
+        if @task.update(task_params)
+          redirect_to board_task_path(@task), notice: '更新できました'
+        else
+            flash.now[error] = '更新できませんでした'
+            render :edit
+        end
+      end
 
     private
     def task_params
