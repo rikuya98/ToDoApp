@@ -1,7 +1,6 @@
-class Board < ApplicationRecord
-
+class Task < ApplicationRecord
+    belongs_to :board
     belongs_to :user
-    has_many :tasks, dependent: :destroy
     validates :name, presence: true
     validates :description, presence: true
 end

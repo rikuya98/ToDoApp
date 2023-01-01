@@ -16,6 +16,9 @@ $board-text-font-size:14px ;
     font-size: $board-title-font-size ;
     margin-bottom: 8px;
     font-weight: bold;
+    p {
+      font-size: 15px;
+    }
   }
 
     img {
@@ -30,11 +33,16 @@ $board-text-font-size:14px ;
 
   &_icon {
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
 
   img {
     width: 30px;
     height: 30px;
     }
+  }
+  &_icon_comments {
+    cursor: pointer;
   }
 }
 
