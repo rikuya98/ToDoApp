@@ -41,6 +41,12 @@ class TasksController < ApplicationController
         end
       end
 
+      def destroy
+        task = current_user.tasks.find(params[:id])
+        task.destroy!
+        redirect_to :back ,notice: 'タスクが削除されました'
+      end
+
     private
     def task_params
         params.require(:task).permit(:name, :description, :start_day, :end_day)
