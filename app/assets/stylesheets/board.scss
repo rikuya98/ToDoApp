@@ -16,6 +16,9 @@ $board-text-font-size:14px ;
     font-size: $board-title-font-size ;
     margin-bottom: 8px;
     font-weight: bold;
+    p {
+      font-size: 15px;
+    }
   }
 
     img {

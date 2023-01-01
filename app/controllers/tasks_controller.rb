@@ -39,12 +39,13 @@ class TasksController < ApplicationController
             flash.now[error] = '更新できませんでした'
             render :edit
         end
-      end
+    end
+
 
       def destroy
         task = current_user.tasks.find(params[:id])
         task.destroy!
-        redirect_to :back ,notice: 'タスクが削除されました'
+        redirect_to board_path(task.board_id),notice: 'タスクが削除されました'
       end
 
     private

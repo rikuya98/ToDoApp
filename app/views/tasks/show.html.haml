@@ -2,6 +2,8 @@
   .board
     .board_name
       = @tasks.name
+      %p= ("開始日：#{@tasks.start_day}")
+      %p= ("期日：#{@tasks.end_day}")
       .dropdown
         = image_tag 'board_btn.png'
         .dropdown-content
