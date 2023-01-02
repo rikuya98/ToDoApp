@@ -4,6 +4,10 @@
       %li= message
 
   = form_with(model: @task, url: board_tasks_path(@task.board), local: true) do |f|
+    %div 
+      = f.label :eyecatch, 'アイキャッチ'
+    %div
+      = f.file_field :eyecatch
     %div
       = f.label :start_day, '開始日時'
     %div 

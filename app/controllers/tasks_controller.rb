@@ -6,6 +6,8 @@ class TasksController < ApplicationController
         # @board = Board.find(params[:id])
         # @tasks = Task.find(params[:id])
         @tasks = Task.find(params[:id])
+        @board = Board.find(params[:board_id])
+        @comments = @tasks.comments
     end
 
     def new
@@ -50,6 +52,6 @@ class TasksController < ApplicationController
 
     private
     def task_params
-        params.require(:task).permit(:name, :description, :start_day, :end_day)
+        params.require(:task).permit(:name, :description, :start_day, :end_day, :eyecatch)
     end
 end

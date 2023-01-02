@@ -1,6 +1,9 @@
 .container
-  .board
-    .board_name
+  .card
+    - if @tasks.eyecatch.attached?
+      .card_image
+        = image_tag @tasks.eyecatch
+    .card_name
       = @tasks.name
       %p= ("開始日：#{@tasks.start_day}")
       %p= ("期日：#{@tasks.end_day}")
@@ -9,7 +12,19 @@
         .dropdown-content
           = link_to 'edit',edit_board_task_path(@tasks)
           = link_to 'delete', board_task_path(@tasks), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
-    .board_description
+    .card_description
       = @tasks.description
-      .board_icon
+      .card_icon
         = image_tag 'Oval.png'
+  %h2 コメント一覧
+  .card
+    - @comments.each do |comment|
+      .card_name
+        = comment.content
+        .dropdown
+          = image_tag 'board_btn.png'
+          .dropdown-content
+            = link_to 'delete', board_task_comment_path(@board,@tasks,comment), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+  = link_to new_board_task_comment_path(@board,@tasks) do
+    .btn_secondary
+      コメントを追加
