@@ -1,7 +1,7 @@
-$board-title-font-size: 18px;
-$board-text-font-size:14px ;
+$card-title-font-size: 18px;
+$card-text-font-size:14px ;
 
-.board {background-color: #F4F4F4;
+.card {background-color: #F4F4F4;
     border-radius: 10px;
     margin: 16px;
     padding:17px 17px;
@@ -13,7 +13,7 @@ $board-text-font-size:14px ;
   &_name {
     display: flex;
     justify-content: space-between;
-    font-size: $board-title-font-size ;
+    font-size: $card-title-font-size ;
     margin-bottom: 8px;
     font-weight: bold;
     p {
@@ -27,7 +27,7 @@ $board-text-font-size:14px ;
   }
 
   &_description {
-    font-size: $board-text-font-size;
+    font-size: $card-text-font-size;
     margin-bottom: 30px;
   }
 
@@ -65,7 +65,7 @@ $board-text-font-size:14px ;
   }
 }
 
-.new_board {
+.new_card {
   background: #FFFFFF;
   border: 1px dashed rgba(0, 0, 0, 0.2);
   border-radius: 10px;
