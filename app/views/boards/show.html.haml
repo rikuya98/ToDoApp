@@ -3,7 +3,10 @@
   - @tasks.each do |task,board|
     = link_to board_task_path(@board, id:task.id) do
       .board
-        .board_name 
+        - if task.eyecatch.attached?
+          .board_image
+            =image_tag task.eyecatch
+        .board_name
           = task.name
         .board_description
           = task.description
