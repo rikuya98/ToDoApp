@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
     get '/'=> 'boards#index'
     resources :boards do
-    resources :tasks
-end
+      resources :tasks do
+        resources :comments
+      end
+   end
 end

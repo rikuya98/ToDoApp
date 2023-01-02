@@ -2,7 +2,7 @@
   .card
     - if @tasks.eyecatch.attached?
       .card_image
-        =image_tag @tasks.eyecatch
+        = image_tag @tasks.eyecatch
     .card_name
       = @tasks.name
       %p= ("開始日：#{@tasks.start_day}")
@@ -16,3 +16,15 @@
       = @tasks.description
       .card_icon
         = image_tag 'Oval.png'
+  %h2 コメント一覧
+  .card
+    - @comments.each do |comment|
+      .card_name
+        = comment.content
+        .dropdown
+          = image_tag 'board_btn.png'
+          .dropdown-content
+            = link_to 'delete', board_task_comment_path(@board,@tasks,comment), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+  = link_to new_board_task_comment_path(@board,@tasks) do
+    .btn_secondary
+      コメントを追加
