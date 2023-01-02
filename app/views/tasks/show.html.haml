@@ -1,5 +1,8 @@
 .container
   .board
+    - if @tasks.eyecatch.attached?
+      .board_image
+        =image_tag @tasks.eyecatch
     .board_name
       = @tasks.name
       %p= ("開始日：#{@tasks.start_day}")
