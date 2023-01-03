@@ -1,28 +1,22 @@
 class TasksController < ApplicationController
-
+    before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+    before_action :set_task, only: [:show]
+    before_action :set_board, only: [:new, :show, :create]
     def show
-        # @board = Board.find(params[:id])
-        # @tasks = @board.tasks
-        # @board = Board.find(params[:id])
-        # @tasks = Task.find(params[:id])
-        @tasks = Task.find(params[:id])
-        @board = Board.find(params[:board_id])
-        @comments = @tasks.comments
+        @comments = @task.comments
     end
 
     def new
-        board = Board.find(params[:board_id])
-        @task = board.tasks.build
+        @task = @board.tasks.build
         @task.user_id = current_user.id
     end
 
     def create
-        board = Board.find(params[:board_id])
-        @task = board.tasks.build(task_params)
+        @task = @board.tasks.build(task_params)
         @task.user_id = current_user.id
 
         if @task.save
-            redirect_to board_path(board), notice: 'タスクを追加'
+            redirect_to board_path(@board), notice: 'タスクを追加'
         else
             flash.now[:error] = 'タスクを追加できませんでした'
             render :new
@@ -36,7 +30,7 @@ class TasksController < ApplicationController
     def update
         @task = current_user.tasks.find(params[:id])
         if @task.update(task_params)
-          redirect_to board_task_path(@task), notice: '更新できました'
+          redirect_to board_task_path, notice: '更新できました'
         else
             flash.now[error] = '更新できませんでした'
             render :edit
@@ -54,4 +48,13 @@ class TasksController < ApplicationController
     def task_params
         params.require(:task).permit(:name, :description, :start_day, :end_day, :eyecatch)
     end
+
+    def set_task
+        @task = Task.find(params[:id])
+    end
+
+    def set_board
+        @board = Board.find(params[:board_id])
+    end
+
 end

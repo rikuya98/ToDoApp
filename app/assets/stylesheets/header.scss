@@ -32,3 +32,10 @@ p.header_line {
     opacity: 0.1;
     width: 100%;
 }
+
+
+@media (max-width: 500px) {
+    .header_loginBtn {
+        width: 157px;
+    }
+  }
