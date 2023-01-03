@@ -27,8 +27,15 @@ a {
 
 }
 p.header_line {
-    margin-top: 16px;
     border-bottom: 1px solid black;
     opacity: 0.1;
     width: 100%;
+    margin: 0;
 }
+
+
+@media (max-width: 500px) {
+    .header_loginBtn {
+        width: 157px;
+    }
+  }
