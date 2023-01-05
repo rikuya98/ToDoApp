@@ -5,4 +5,9 @@ class Board < ApplicationRecord
     has_one_attached :eyecatch
     validates :name, presence: true
     validates :description, presence: true
+
+    def comment_count
+        comments.count
+    end
+
 end

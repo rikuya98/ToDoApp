@@ -16,7 +16,7 @@
         .card_description
           = board.description
         .card_icon
-          = image_tag 'Oval.png'
+          = image_tag current_user.avatar_image
   = link_to new_board_path do
     .new_card
       %h2 + Add new borad

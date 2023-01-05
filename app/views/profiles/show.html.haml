@@ -1,0 +1,16 @@
+.container
+  .profilepage_user_image
+    = image_tag current_user.avatar_image
+  .profile_card
+    .card
+      %p 
+        名前  #{current_user.display_name}
+      %p
+        年齢  #{current_user.age}
+      %p 
+        性別  #{I18n.t("enum.genders.#{current_user.gender}")}
+      %p 
+        役割  #{current_user.profile&.role}
+      .profile_btn
+        .btn_submit
+          = link_to 'プロフィール編集', edit_profile_path

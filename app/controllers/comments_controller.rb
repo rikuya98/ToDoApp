@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
     before_action :set_task, only: [:new, :show, :destroy, :create]
-    before_action :set_board, only: [:new, :show, :destroy]
+    before_action :set_board, only: [:new, :show, :destroy, :create]
 
     def new
         @comment = @task.comments.build
