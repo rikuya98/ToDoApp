@@ -12,6 +12,7 @@
           = task.description
         .card_icon
           = image_tag task.user.avatar_image
+          = image_tag comment.user.avatar_image
           .card_icon_comments
             = image_tag 'comments.png'
             %span= task.comment_count
