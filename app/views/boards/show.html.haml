@@ -1,6 +1,6 @@
 .container
   %h2= @board.name
-  - @tasks.each do |task,board,comment|
+  - @tasks.each do |task,board|
     = link_to board_task_path(@board, id:task.id) do
       .card
         - if task.eyecatch.attached?
@@ -12,7 +12,6 @@
           = task.description
         .card_icon
           = image_tag task.user.avatar_image
-          = image_tag comment.user.avatar_image
           .card_icon_comments
             = image_tag 'comments.png'
             %span= task.comment_count

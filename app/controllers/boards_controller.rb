@@ -10,8 +10,6 @@ class BoardsController < ApplicationController
   def show
     @board = Board.find(params[:id])
     @tasks = @board.tasks
-    task = Task.find(params[:id])
-    @comments = task.commetns
   end
 
   def new
