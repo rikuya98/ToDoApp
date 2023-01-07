@@ -11,9 +11,10 @@
         .card_description
           = task.description
         .card_icon
-          = image_tag 'Oval.png'
+          = image_tag task.user.avatar_image
           .card_icon_comments
             = image_tag 'comments.png'
+            %span= task.comment_count
   = link_to new_board_task_path(@board) do
     .new_card
       %h2 + Add new task
