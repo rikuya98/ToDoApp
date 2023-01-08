@@ -4,7 +4,6 @@ class BoardsController < ApplicationController
   def index
     @boards = Board.all
     @board = Board.find_by(params[:id])
-    @user =  User.find_by(id:@board.user_id)
   end
 
   def show

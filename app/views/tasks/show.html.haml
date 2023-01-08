@@ -7,11 +7,12 @@
       = @task.name
       %p= ("開始日：#{@task.start_day}")
       %p= ("期日：#{@task.end_day}")
-      .dropdown
-        = image_tag 'board_btn.png'
-        .dropdown-content
-          = link_to 'edit',edit_board_task_path(@task)
-          = link_to 'delete', board_task_path(@task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+      - if @task.user&.id == current_user&.id
+        .dropdown
+          = image_tag 'board_btn.png'
+          .dropdown-content
+            = link_to 'edit',edit_board_task_path(@task)
+            = link_to 'delete', board_task_path(@task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
     .card_description
       = @task.description
     .card_icon
@@ -24,10 +25,11 @@
     - @comments.each do |comment|
       .card_icon
         = image_tag comment.user.avatar_image
-        .dropdown
-          = image_tag 'board_btn.png'
-          .dropdown-content
-            = link_to 'delete', board_task_comment_path(@board,@task,comment), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+        - if comment.user&.id == current_user&.id
+          .dropdown
+            = image_tag 'board_btn.png'
+            .dropdown-content
+              = link_to 'delete', board_task_comment_path(@board,@task,comment), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
       .card_description
         = comment.content
   = link_to new_board_task_comment_path(@board,@task) do
